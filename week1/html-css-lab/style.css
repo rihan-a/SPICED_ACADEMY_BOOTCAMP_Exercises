@@ -1,0 +1,78 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* ---- Header styling ---- */
+#header {
+    height: 12vh;
+
+    position: relative;
+}
+
+.logo img {
+    height: 40px;
+}
+.logo {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+
+.hamburger-menu {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+
+.hamburger-menu button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: unset;
+    border-radius: none;
+    cursor: pointer;
+}
+
+.hamburger-menu button img {
+    height: 40px;
+}
+
+/* --- Main styling --- */
+
+.img-container {
+    width: 100vw;
+    height: 88vh;
+    background: url(./assets/spices.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.title-container {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.title-container h2 {
+    color: white;
+    font-size: 3.7rem;
+    font-style: italic;
+    text-align: center;
+}
+
+.title-container button {
+    width: 25%;
+    height: 60px;
+    display: block;
+    margin: 30px auto;
+    border-radius: 50px;
+    font-size: 2.3rem;
+    color: rgb(195, 127, 0);
+    background-color: rgb(255, 208, 0);
+    border: solid 4px rgb(195, 127, 0);
+}
