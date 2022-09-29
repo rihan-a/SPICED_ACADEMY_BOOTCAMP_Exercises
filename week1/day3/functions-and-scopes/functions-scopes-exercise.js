@@ -33,3 +33,18 @@ function check(num) {
 }
 
 console.log(check(10));
+
+// Bonus
+function getTotaler() {
+    let total = 0;
+    return function (num) {
+        total += num;
+        return total;
+    };
+}
+
+let totaler = getTotaler();
+
+console.log(totaler(1)); //1
+console.log(totaler(2)); //3
+console.log(totaler(5)); //8
