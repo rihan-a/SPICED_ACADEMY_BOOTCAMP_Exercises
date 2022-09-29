@@ -75,4 +75,5 @@
     color: rgb(195, 127, 0);
     background-color: rgb(255, 208, 0);
     border: solid 4px rgb(195, 127, 0);
+    cursor: pointer;
 }
