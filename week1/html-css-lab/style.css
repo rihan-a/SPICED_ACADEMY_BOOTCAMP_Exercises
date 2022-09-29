@@ -84,13 +84,13 @@
 }
 
 .features-container {
-    padding: 150px 0;
+    padding: 80px 0;
 }
 
 .features .card {
     width: 35vw;
     height: 30%;
-    margin: 50px 5%;
+    margin: 50px 7%;
 }
 
 .features-container .card:nth-child(1),
@@ -119,4 +119,11 @@
 
 .clear-both {
     clear: both;
+}
+
+footer .footer-container {
+    background-color: rgb(103, 103, 103);
+    color: white;
+    padding: 15px;
+    padding-left: 50px;
 }
