@@ -1,11 +1,16 @@
 // part 01
 function logType(input) {
-    console.log(typeof input + "!");
+    if (Array.isArray(input)) {
+        console.log("Array!");
+    } else {
+        console.log(typeof input + "!");
+    }
 }
 
 logType("hello");
 logType({ name: "name", age: 25 });
 logType(200);
+logType([1, 2, 3]);
 
 // part 02
 var a = {
