@@ -38,6 +38,22 @@
     height: 40px;
 }
 
+@media screen and (max-width: 786px) {
+    #header {
+        height: 90px;
+    }
+    .logo {
+        left: 20px;
+    }
+    .hamburger-menu {
+        right: 20px;
+    }
+
+    .logo img {
+        height: 35px;
+    }
+}
+
 /* --- Main styling --- */
 
 .img-container {
@@ -75,6 +91,28 @@
     background-color: rgb(255, 208, 0);
     border: solid 4px rgb(195, 127, 0);
     cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+    .title-container button {
+        height: 70px;
+        width: 35%;
+    }
+}
+
+@media screen and (max-width: 786px) {
+    .title-container button {
+        height: 50px;
+        width: 45%;
+        font-size: 1.5rem;
+    }
+
+    .title-container h2 {
+        width: 80%;
+        margin: auto;
+        color: white;
+        font-size: 2.2rem;
+    }
 }
 
 /* ----- Features section ----- */
@@ -119,6 +157,28 @@
 
 .clear-both {
     clear: both;
+}
+
+@media screen and (max-width: 786px) {
+    .features .card {
+        width: 85vw;
+    }
+
+    .features .desc-container {
+        width: 75%;
+    }
+    .features .desc-container h4 {
+        font-size: 1.5rem;
+    }
+    .features .desc-container p {
+        font-size: 1.2rem;
+    }
+}
+
+/* --- footer styling */
+
+footer {
+    position: relative;
 }
 
 footer .footer-container {
