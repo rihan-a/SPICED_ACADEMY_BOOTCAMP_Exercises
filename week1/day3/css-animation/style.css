@@ -1,0 +1,48 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    width: 300px;
+    height: 300px;
+    background-color: greenyellow;
+    transition: all 0.3s ease-in;
+    animation-name: clubbing;
+    animation-duration: 2s;
+
+    animation-fill-mode: forwards;
+}
+
+.box:hover {
+    border-radius: 50%;
+}
+
+/*  when pressed */
+.box:active {
+    background-color: black;
+}
+
+/*  css animation */
+
+@keyframes clubbing {
+    0% {
+        background-color: blue;
+        transform: scale(1);
+    }
+    25% {
+        background-color: red;
+        transform: scale(1.7);
+        border-radius: 50%;
+    }
+    50% {
+        background-color: green;
+        transform: scale(2);
+    }
+
+    75% {
+        background-color: yellow;
+        transform: scale(3);
+    }
+}

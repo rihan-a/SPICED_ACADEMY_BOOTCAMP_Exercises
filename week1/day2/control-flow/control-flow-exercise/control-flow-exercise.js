@@ -5,6 +5,7 @@ function logType(input) {
 
 logType("hello");
 logType({ name: "name", age: 25 });
+logType(200);
 
 // part 02
 var a = {
