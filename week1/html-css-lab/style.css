@@ -187,3 +187,23 @@ footer .footer-container {
     padding: 15px;
     padding-left: 50px;
 }
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: rgb(41, 41, 41);
+    }
+
+    .title-container button {
+        background-color: rgb(41, 41, 41);
+    }
+
+    .features {
+        background-color: rgb(41, 41, 41);
+    }
+    .features .desc-container h4 {
+        color: white;
+    }
+    .features .desc-container p {
+        color: white;
+    }
+}
