@@ -39,3 +39,17 @@ function invertcase(str) {
 
 // Part02 test
 console.log(invertcase("RiHan%1$"));
+
+// Bonus
+function Countdown(sec) {
+    this.sec = sec;
+    this.start = function () {
+        for (let i = this.sec; i >= 0; i--) {
+            console.log(i);
+        }
+    };
+}
+
+// Bonus test
+let countdown = new Countdown(10);
+countdown.start();
