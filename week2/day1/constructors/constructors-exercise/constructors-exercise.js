@@ -40,7 +40,7 @@ function invertcase(str) {
 // Part02 test
 console.log(invertcase("RiHan%1$"));
 
-// Bonus
+// Bonus --
 function Countdown(sec) {
     this.sec = sec;
     this.start = function () {
