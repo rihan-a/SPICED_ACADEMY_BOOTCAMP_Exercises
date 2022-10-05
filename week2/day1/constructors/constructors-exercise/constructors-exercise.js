@@ -1,25 +1,27 @@
 // Part01
-function Rectangle(width, length) {
-    this.width = width;
-    this.length = length;
-    this.getArea = function () {
-        return this.width * this.length;
-    };
+
+function getArea() {
+    return this.length * this.width;
 }
+
+function Rectangle(length, width) {
+    this.length = length;
+    this.width = width;
+}
+Rectangle.prototype.getArea = getArea;
 
 function Square(length) {
     this.length = length;
+    this.width = length;
 }
 
-Square.prototype.getArea = function () {
-    let newObject = new Rectangle(this.length, this.length);
-    return newObject.getArea();
-};
+Square.prototype.getArea = getArea;
 
 // Part01 test
 let rect = new Rectangle(4, 5);
 console.log(rect.getArea());
 let square = new Square(4);
+
 console.log(square.getArea());
 
 // Part02
