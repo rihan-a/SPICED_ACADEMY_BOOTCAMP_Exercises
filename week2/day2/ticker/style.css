@@ -1,0 +1,27 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+#headlines {
+    white-space: nowrap;
+    position: absolute;
+    border-bottom: 1px solid black;
+    padding: 10px 0;
+    left: -50%;
+}
+
+#ticker {
+    position: relative;
+    overflow-x: hidden;
+    height: 50px;
+}
+
+#headlines a {
+    display: inline-block;
+
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    padding-right: 20px;
+}
