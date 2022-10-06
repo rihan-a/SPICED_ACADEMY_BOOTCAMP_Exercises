@@ -1,6 +1,7 @@
 // IIFE
 (function () {
     let headlineContainer = document.querySelector("#headlines");
+    let headlinesArr = document.querySelectorAll(".headline-link");
 
     let linkWidth = headlineContainer.firstElementChild.offsetWidth;
     let linkOffsetLeft = headlineContainer.firstElementChild.offsetLeft;
@@ -14,26 +15,29 @@
             linkOffsetLeft = headlineContainer.firstElementChild.offsetLeft;
         }
 
-        linkOffsetLeft--;
+        linkOffsetLeft = linkOffsetLeft - 2;
         headlineContainer.style.left = `${linkOffsetLeft}px`;
 
-        requestAnimationFrame(move);
+        requestID = requestAnimationFrame(move);
     }
 
     requestAnimationFrame(move);
 
-    headlineContainer.addEventListener("mouseover", stopTicker);
-    headlineContainer.addEventListener("mouseleave", runTicker);
+    for (let i = 0; i < headlinesArr.length; i++) {
+        headlinesArr[i].addEventListener("mouseover", stopTicker);
+        headlinesArr[i].addEventListener("mouseleave", runTicker);
+    }
+
+    // function to stop the ticker
     function stopTicker() {
         console.log("in");
-        console.log(requestID);
-        requestID = requestAnimationFrame(move);
+        //console.log(requestID);
         cancelAnimationFrame(requestID);
     }
 
+    // function to resume the ticker
     function runTicker() {
         console.log("out");
-        console.log(requestID);
-        //requestID = requestAnimationFrame(move);
+        requestID = requestAnimationFrame(move);
     }
 })();
