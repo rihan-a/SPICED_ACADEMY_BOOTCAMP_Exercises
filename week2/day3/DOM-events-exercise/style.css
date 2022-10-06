@@ -1,0 +1,16 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body {
+    background-color: rgb(38, 38, 38);
+    position: relative;
+}
+.box {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: greenyellow;
+    transform: translate(-50%, -50%);
+}
