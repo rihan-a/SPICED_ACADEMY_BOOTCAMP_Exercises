@@ -38,6 +38,17 @@
     height: 40px;
 }
 
+/* --- aside styling */
+
+.side-menu {
+    position: absolute;
+    background-color: blueviolet;
+    height: 100vh;
+    width: 20%;
+    z-index: 999;
+    right: 0;
+}
+
 @media screen and (max-width: 786px) {
     #header {
         height: 90px;
@@ -188,6 +199,7 @@ footer .footer-container {
     padding-left: 50px;
 }
 
+/* --- Dark mode --- */
 @media (prefers-color-scheme: dark) {
     body {
         background-color: rgb(41, 41, 41);
