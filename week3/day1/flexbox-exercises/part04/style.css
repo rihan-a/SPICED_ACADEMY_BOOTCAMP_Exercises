@@ -1,0 +1,48 @@
+.container {
+    display: flex;
+}
+
+.b-square {
+    width: 200px;
+    height: 200px;
+    display: flex;
+}
+
+.s-square {
+    width: 100px;
+    height: 100px;
+    z-index: 999;
+}
+
+/*-- big squares colors ---*/
+.b-square:nth-child(1) {
+    background-color: grey;
+    justify-content: flex-end;
+}
+.b-square:nth-child(2) {
+    background-color: black;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+.b-square:nth-child(3) {
+    background-color: blue;
+    align-items: flex-end;
+}
+.b-square:nth-child(4) {
+    background-color: purple;
+}
+
+/*--- small squares colors ---*/
+.b-square:nth-child(1) .s-square {
+    background-color: orange;
+}
+.b-square:nth-child(2) .s-square {
+    background-color: yellow;
+}
+
+.b-square:nth-child(3) .s-square {
+    background-color: green;
+}
+.b-square:nth-child(4) .s-square {
+    background-color: pink;
+}
