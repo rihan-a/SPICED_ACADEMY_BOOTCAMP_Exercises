@@ -2,6 +2,8 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    justify-content: space-between;
+    align-items: stretch;
 }
 
 header {
@@ -11,9 +13,10 @@ header {
 
 main {
     background-color: grey;
+    flex-grow: 1;
 }
 
 footer {
-    height: 70px;
+    height: 30px;
     background-color: pink;
 }
