@@ -14,11 +14,19 @@
 
 .kitty {
     width: 100%;
-
     /* all offscreen by default */
     transform: translateX(100%);
     position: absolute;
     z-index: 1;
+}
+#carousel .kitty:nth-child(2)::before {
+    content: "1";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 30px;
+    color: red;
+    z-index: 99;
 }
 
 .kitty.onscreen {
@@ -48,10 +56,11 @@
 }
 
 .dot {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     border-radius: 50%;
     border: solid 2px white;
+    cursor: pointer;
 }
 
 .current {
