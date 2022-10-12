@@ -100,6 +100,43 @@
     transform: translateX(400%);
 }
 
+/*---- Modal stling  ---- */
+
+.modal {
+    position: absolute;
+    width: 35%;
+    height: 35%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal .txt-container {
+    margin: 20px;
+}
+.modal p:nth-child(1) {
+    margin: 15px 0px;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.modal p {
+    margin: 15px 0px;
+    font-size: 1.2rem;
+}
+
+.close-modal img {
+    width: 25px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
 @media screen and (max-width: 786px) {
     #header {
         height: 90px;
