@@ -20,3 +20,22 @@ function closeSideMenu() {
     sideMenuContainer.classList.add("move-right");
     overlayBackground.style.display = "none";
 }
+
+// Modal using jQuery
+
+let $modal = $(".modal");
+let $modalClose = $(".close-modal");
+
+// when page is loaded wait 1 sec then show the modal
+$(window).ready(function () {
+    setTimeout(function () {
+        $modal.css("display", "flex");
+        $(overlayBackground).css("display", "block");
+    }, 1000);
+});
+
+// adding event listner to close the modal
+$modalClose.click(() => {
+    $modal.css("display", "none");
+    $(overlayBackground).css("display", "none");
+});
