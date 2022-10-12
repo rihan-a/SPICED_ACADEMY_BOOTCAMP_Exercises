@@ -1,0 +1,48 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    position: relative;
+    width: 600px;
+    height: 600px;
+}
+
+.background {
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+}
+
+.foreground {
+    width: 320px;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+}
+
+.foreground img {
+    height: 100%;
+}
+
+.background img {
+    height: 100%;
+}
+
+.slider {
+    background-color: rgba(4, 0, 255, 0.627);
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    z-index: 999;
+    right: 0;
+    cursor: grabbing;
+}
