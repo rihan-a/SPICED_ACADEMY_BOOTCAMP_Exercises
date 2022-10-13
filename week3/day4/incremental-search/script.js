@@ -1,3 +1,4 @@
+// Countries Array
 const countries = [
     "Afghanistan",
     "Albania",
@@ -204,6 +205,9 @@ let filteredCountries;
 
 let searchInputValue = "";
 
+// empty the search input when refreshed
+$searchInput.val("");
+
 $searchInput.keyup(function () {
     searchInputValue = $searchInput.val().toLowerCase();
     filterCountriesArr(searchInputValue);
@@ -212,11 +216,11 @@ $searchInput.keyup(function () {
 
 //let testCountry = "egypt";
 
+// function to search and filter using the user input and returns list of countries as a result
 function filterCountriesArr(searchInputValue) {
     // console.log(
     //     testCountry.slice(0, searchInputValue.length) === searchInputValue
     // );
-
     console.log(searchInputValue);
     if (searchInputValue != "") {
         filteredCountries = countries.filter((country) => {
@@ -226,5 +230,39 @@ function filterCountriesArr(searchInputValue) {
             );
         });
     }
+    printSearchResults(filteredCountries);
+
     console.log(filteredCountries);
 }
+
+// function to print the results
+function printSearchResults(filteredCountries) {
+    $searchResults.html("");
+    if (searchInputValue != "") {
+        filteredCountries.forEach((country, id) => {
+            if (id < 4) {
+                $searchResults[0].innerHTML += `<li>${country}</li>`;
+                //$searchResults.html(`<li>${country}</li>`);
+            }
+        });
+    }
+}
+
+// fade out the results by default
+$searchResults.fadeOut(100);
+
+// fadeout results when clicked outside the search bar
+$searchInput.blur(() => {
+    $searchResults.fadeOut(200);
+});
+// fadein results when clicked inside the search bar
+$searchInput.focus(() => {
+    $searchResults.fadeIn(200);
+});
+
+// show the country name in search bar when clicked
+$searchResults.click((e) => {
+    console.log(e.target.innerText);
+    let currentSelection = e.target.innerText;
+    $searchInput.val(currentSelection);
+});
