@@ -195,3 +195,36 @@ const countries = [
     "Zambia",
     "Zimbabwe",
 ];
+
+// Variables
+
+const $searchInput = $("#search-input");
+const $searchResults = $(".search-results");
+let filteredCountries;
+
+let searchInputValue = "";
+
+$searchInput.keyup(function () {
+    searchInputValue = $searchInput.val().toLowerCase();
+    filterCountriesArr(searchInputValue);
+    console.log(searchInputValue);
+});
+
+//let testCountry = "egypt";
+
+function filterCountriesArr(searchInputValue) {
+    // console.log(
+    //     testCountry.slice(0, searchInputValue.length) === searchInputValue
+    // );
+
+    console.log(searchInputValue);
+    if (searchInputValue != "") {
+        filteredCountries = countries.filter((country) => {
+            return (
+                country.toLowerCase().slice(0, searchInputValue.length) ===
+                searchInputValue
+            );
+        });
+    }
+    console.log(filteredCountries);
+}
