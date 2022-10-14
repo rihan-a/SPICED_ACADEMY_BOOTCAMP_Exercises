@@ -1,0 +1,64 @@
+body {
+    background-color: #e0e0e0;
+}
+
+#board {
+    display: flex;
+}
+
+/* this css for .slot and .hole supports the sliding animation */
+.slot {
+    width: 40px;
+    height: 40px;
+    border: 30px solid rgba(255, 255, 255, 0);
+    overflow: hidden;
+    margin: 5px;
+    border-radius: 50%;
+}
+
+.hole {
+    width: 30px;
+    height: 30px;
+    /* border: 40px solid rgb(30, 30, 30); */
+    background-color: black;
+    border-radius: 50%;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #e0e0e0;
+    box-shadow: inset 3px 3px 5px #bebebe, inset -3px -3px 5px #ffffff;
+}
+
+/*  this css for .slot and .hole does NOT support sliding animation */
+/* .slot {
+    width: 100px;
+    height: 100px;
+    background-color: magenta;
+}
+
+.hole {
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    border-radius: 50%;
+    position: relative;
+    left: 10px;
+    top: 10px;
+} */
+
+.column {
+    transition: all 0.1s ease-in-out;
+}
+
+.column:hover .hole {
+    border: solid 1px black;
+}
+
+.player1 {
+    border: 30px solid white;
+}
+
+.player2 {
+    border: 30px solid rgb(15, 15, 15);
+}
