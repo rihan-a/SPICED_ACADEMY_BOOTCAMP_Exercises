@@ -1,0 +1,10 @@
+textarea {
+    width: 100%;
+    height: 80%;
+    font-size: 1.2rem;
+}
+
+#check-btn {
+    width: 100%;
+    height: 50px;
+}
