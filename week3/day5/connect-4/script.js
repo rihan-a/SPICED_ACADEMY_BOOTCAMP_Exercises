@@ -188,6 +188,7 @@ function checkForWinnerDiagonals() {
             }
         } else {
             diagonalRightCounter = 0;
+            winningFour = [];
         }
         r2++;
     }
@@ -202,7 +203,7 @@ function announceWinner(winnerPlayer) {
         $(".winner-container").children().css("color", "black");
     }
 }
-
+// reset game click event
 $(".restart").click(() => {
     $(".winner-container").css("display", "none");
     location.reload();
