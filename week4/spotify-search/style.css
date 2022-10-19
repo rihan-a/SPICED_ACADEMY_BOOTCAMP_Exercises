@@ -14,7 +14,6 @@ h2 {
     font-size: 2.1rem;
     color: #1ed760;
     font-weight: 600;
-    /* font-family: "Circular Sp UI v3 T Book"; */
 }
 
 .logo-container {
@@ -77,7 +76,6 @@ header {
     width: 78%;
     border: none;
     height: 30px;
-    /* font-family: "Circular Sp UI v3 T Book"; */
     font-size: 1rem;
 }
 
@@ -91,7 +89,6 @@ header {
     width: 10%;
     border: none;
     height: 30px;
-    /* font-family: "Circular Sp UI v3 T Book"; */
     font-size: 1rem;
 }
 
@@ -129,9 +126,10 @@ header {
 
 .outer-card {
     width: 19%;
-    height: 330px;
-    background-color: #181818;
-    border-radius: 10px;
+    height: 360px;
+    background-color: #1f1f1f;
+    border-radius: 7px;
+    margin-bottom: 15px;
 }
 .inner-card {
     margin: 15px;
@@ -154,9 +152,8 @@ header {
 .card-desc a {
     color: white;
     text-decoration: none;
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-weight: 300;
-    /* font-family: "Circular Sp UI v3 T Book"; */
     margin: 10px 0px;
     display: block;
 }
@@ -165,7 +162,6 @@ header {
     color: rgb(118, 118, 118);
     font-size: 1rem;
     font-weight: 300;
-    /* font-family: "Circular Sp UI v3 T Book"; */
 }
 
 .artist-play-container {
