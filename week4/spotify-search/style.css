@@ -1,0 +1,191 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #121212;
+    font-family: "Poppins", sans-serif;
+}
+
+h2 {
+    margin-top: 30px;
+    font-size: 2.1rem;
+    color: #1ed760;
+    font-weight: 600;
+    /* font-family: "Circular Sp UI v3 T Book"; */
+}
+
+.logo-container {
+    width: 29%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo .bar {
+    width: 40px;
+    height: 5px;
+    background-color: #121212;
+}
+
+.logo {
+    background-color: #1ed760;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bars-container {
+    margin: auto;
+    width: 90%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ------------ Search Area -------- */
+.search-area {
+    margin-top: 30px;
+    width: 60%;
+    height: 45px;
+    border-radius: 25px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.search-area input {
+    width: 78%;
+    border: none;
+    height: 30px;
+    /* font-family: "Circular Sp UI v3 T Book"; */
+    font-size: 1rem;
+}
+
+.search-area input:focus,
+.search-area select {
+    border: none;
+    outline: none;
+}
+
+.search-area select {
+    width: 10%;
+    border: none;
+    height: 30px;
+    /* font-family: "Circular Sp UI v3 T Book"; */
+    font-size: 1rem;
+}
+
+.search-area button {
+    background-color: unset;
+    border: none;
+    cursor: pointer;
+}
+.search-area button img {
+    height: 35px;
+    margin-top: 4px;
+}
+
+/* ------------ Results Area ----------- */
+
+.search-title-container {
+    margin: auto;
+    padding: 40px 10px;
+    width: 95%;
+}
+
+.search-title {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.results-container {
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0px auto;
+}
+
+.outer-card {
+    width: 19%;
+    height: 330px;
+    background-color: #181818;
+    border-radius: 10px;
+}
+.inner-card {
+    margin: 15px;
+    max-height: 200px;
+}
+.card-img {
+    width: 100%;
+    height: 210px;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.card-img img {
+    width: 100%;
+}
+
+.card-desc {
+    width: 100%;
+}
+.card-desc a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 300;
+    /* font-family: "Circular Sp UI v3 T Book"; */
+    margin: 10px 0px;
+    display: block;
+}
+
+.card-desc p {
+    color: rgb(118, 118, 118);
+    font-size: 1rem;
+    font-weight: 300;
+    /* font-family: "Circular Sp UI v3 T Book"; */
+}
+
+.artist-play-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.play-btn {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #1ed760;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.play-btn img {
+    margin-top: 7px;
+    width: 20px;
+}
