@@ -5,6 +5,11 @@
     let searchType = document.querySelector("#search-select");
     let resultsContainer = document.querySelector(".results-container");
     let searchTitle = document.querySelector(".search-title");
+    let logoBtn = document.querySelector(".logo-container");
+
+    logoBtn.addEventListener("click", () => {
+        location.reload();
+    });
 
     searchBtn.addEventListener("click", searchMusic);
     document.addEventListener("keypress", (event) => {
@@ -17,8 +22,6 @@
         resultsContainer.innerHTML = "";
         let inputValue = searchInput.value;
         let typeValue = searchType.value;
-        // console.log(inputValue);
-        // console.log(typeValue);
         getMusic(inputValue, typeValue);
     }
 
@@ -37,7 +40,6 @@
                 } else {
                     searchTitle.innerText = `No results`;
                 }
-
                 console.log(musicData);
             },
             error: function (error) {
@@ -57,6 +59,7 @@
                     imgUrl =
                         "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg";
                 }
+                // artists html
                 resultsContainer.innerHTML += `
          <div class="outer-card">
                     <div class="inner-card">
@@ -81,6 +84,7 @@
                 </div>
         `;
             } else {
+                // Albums html
                 resultsContainer.innerHTML += `
          <div class="outer-card">
                     <div class="inner-card">
