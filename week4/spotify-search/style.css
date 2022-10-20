@@ -61,6 +61,8 @@ header {
     border: none;
     height: 30px;
     font-size: 1rem;
+    background: none;
+    /* -webkit-appearance: none; */
 }
 
 .search-area button {
@@ -98,7 +100,7 @@ header {
 
 .outer-card {
     width: 19%;
-    height: 360px;
+    height: 320px;
     background-color: #1f1f1f;
     border-radius: 7px;
     margin-bottom: 15px;
@@ -161,7 +163,7 @@ header {
 /* --- Load More --- */
 
 .load-more {
-    display: block;
+    display: none;
     margin: 40px auto;
     background-color: white;
     width: 10%;
@@ -176,11 +178,11 @@ header {
 /* ---- Loading spinner ---- */
 
 .lds-facebook {
-    display: block;
     position: relative;
     width: 80px;
     height: 80px;
     margin: auto;
+    display: none;
 }
 .lds-facebook div {
     display: inline-block;
