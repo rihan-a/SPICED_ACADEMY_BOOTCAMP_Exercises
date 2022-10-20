@@ -6,8 +6,14 @@
     let resultsContainer = document.querySelector(".results-container");
     let searchTitle = document.querySelector(".search-title");
     let logoBtn = document.querySelector(".logo-container");
+    let loadingSpinner = document.querySelector(".lds-facebook");
+    let loadMore = document.querySelector(".load-more");
+    let searchUrl;
+    let nextUrl;
 
+    // refresh page when logo clicked
     logoBtn.addEventListener("click", () => {
+        searchInput.value = "";
         location.reload();
     });
 
@@ -19,28 +25,31 @@
     });
 
     function searchMusic() {
+        loadMore.style.display = "none";
+        loadingSpinner.style.display = "block";
         resultsContainer.innerHTML = "";
         let inputValue = searchInput.value;
         let typeValue = searchType.value;
-        getMusic(inputValue, typeValue);
+        searchUrl = `https://spicedify.herokuapp.com/spotify?q=${inputValue}&type=${typeValue}`;
+        getMusic(searchUrl, inputValue, typeValue);
     }
 
     // fetch data from Spotify
-    function getMusic(name, type) {
+    function getMusic(URL, name, type) {
         $.ajax({
-            url: `https://spicedify.herokuapp.com/spotify?q=${name}&type=${type}`,
+            url: URL,
             method: "GET", // its get by default
             success: function (data) {
-                console.log(data);
+                //console.log(data);
                 let musicData = data.artists.items || data.albums.items;
-
+                nextUrl = data.artists.next || data.albums.next;
                 if (musicData.length > 0 && musicData.length != 0) {
                     searchTitle.innerText = `Search results for '${name}'`;
                     printSearchResults(musicData, type);
                 } else {
                     searchTitle.innerText = `No results`;
                 }
-                console.log(musicData);
+                //console.log(musicData);
             },
             error: function (error) {
                 console.log(error);
@@ -50,6 +59,8 @@
 
     function printSearchResults(musicData, type) {
         let imgUrl;
+        loadingSpinner.style.display = "none";
+
         musicData.forEach((item) => {
             // check if there is images otherwise show and empty placeholder
             if (type == "artist") {
@@ -59,7 +70,7 @@
                     imgUrl =
                         "https://upload.wikimedia.org/wikipedia/commons/1/14/No_Image_Available.jpg";
                 }
-                // artists html
+                // Artists html
                 resultsContainer.innerHTML += `
          <div class="outer-card">
                     <div class="inner-card">
@@ -84,7 +95,7 @@
                 </div>
         `;
             } else {
-                // Albums html
+                // Albums html - not done yet
                 resultsContainer.innerHTML += `
          <div class="outer-card">
                     <div class="inner-card">
@@ -110,5 +121,15 @@
         `;
             }
         });
+
+        if (nextUrl !== null) {
+            loadMore.style.display = "block";
+        } else {
+            loadMore.style.display = "none";
+        }
     }
+    // load more search results
+    loadMore.addEventListener("click", () => {
+        getMusic(nextUrl, searchInput.value);
+    });
 })();
