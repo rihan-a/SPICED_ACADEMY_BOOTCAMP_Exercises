@@ -15,18 +15,11 @@
         <title>Spotify Search</title>
     </head>
     <body>
+        <!-- Search Area  -->
         <header>
-            <!-- <div class="logo-container">
-                <div class="logo">
-                    <div class="bars-container">
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                        <div class="bar"></div>
-                    </div>
-                </div>
-          
-            </div> -->
-            <h2 class="main-title">Spotify Search</h2>
+            <div class="logo-container">
+                <img src="./assets/Spotify_Logo_RGB_White.png" alt="" />
+            </div>
 
             <div class="search-area">
                 <input
@@ -58,15 +51,27 @@
             </div>
         </header>
 
+        <!-- Search results area -->
+
         <main>
             <div class="search-title-container">
                 <h3 class="search-title"></h3>
             </div>
 
+            <!-- Loading spinner -->
+            <div class="lds-facebook">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
             <div class="results-container">
                 <!-- html tags will be injected from JS -->
             </div>
+
+            <button class="load-more">load more</button>
         </main>
+
         <!-- jQuery CDN -->
         <script
             src="https://code.jquery.com/jquery-3.6.1.min.js"
