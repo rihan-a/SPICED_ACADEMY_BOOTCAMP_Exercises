@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./style.css" />
+        <title>Handlebars exercise part01</title>
+    </head>
+    <body>
+        <script id="authors" type="text/x-handlebars-template">
+            {{#authors}}
+                <h2>Authors name: {{name}}</h2>
+                <h3>Born: {{born}}</h3>
+                <h3>Died: {{died}}</h3>
+                <h3>Selected writings {{selectedWritings}}</h3>
+                <h3>quote: {{quote}}</h3>
+                <img class="authors-img" src="{{photo}}" alt="" />
+            {{/authors}}
+        </script>
+
+        <!-- Handelbars CDN -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"></script>
+        <script src="./script.js"></script>
+    </body>
+</html>
