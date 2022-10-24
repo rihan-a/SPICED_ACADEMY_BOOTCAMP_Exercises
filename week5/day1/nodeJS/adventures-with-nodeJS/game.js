@@ -7,6 +7,8 @@ const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
 });
+let txtColor = process.argv;
+//console.log(txtColor[2]);
 
 const story = {
     q: "Welcome to The Land Of Wizards! Would you like to play?",
@@ -33,11 +35,11 @@ function askQuestion(question, answers) {
 
     // check if there is only one answer
     if (answersKeys.length > 1) {
-        prompt = `${question} [${chalk.green(answersKeys[0])} OR ${chalk.red(
-            answersKeys[1]
-        )}]\n`;
+        prompt = `${chalk[txtColor[2]](question)} [${chalk.green(
+            answersKeys[0]
+        )} OR ${chalk.red(answersKeys[1])}]\n`;
     } else {
-        prompt = `${question}\n`;
+        prompt = `${chalk[txtColor[2]](question)}\n`;
     }
 
     rl.question(prompt, (theAnswer) => {
@@ -52,7 +54,7 @@ function askQuestion(question, answers) {
                 rl.close();
             }
         } else if (theAnswer == answersKeys[1]) {
-            console.log(answers[answersKeys[1]]);
+            console.log(chalk[txtColor[2]](answers[answersKeys[1]]));
             rl.close();
         } else {
             // wrong answer repeat again
