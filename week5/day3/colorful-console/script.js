@@ -1,29 +1,37 @@
 // import node modules
 const chalk = require("chalk");
 const http = require("http");
-
-console.log(chalk.red("this text is red"));
-console.log(chalk.green("this text is green"));
+const querystring = require("node:querystring");
 
 // create a server
 http.createServer((request, response) => {
     //For each request, log the method, url, and request headers to the console
     console.log("this is the http method: ", request.method);
-    console.log("this url was requested: ", request.url);
-    console.log("this is the http headers: ", request.headers);
 
     // this part parses the request body
     let body = [];
-    // if request method is HEAD
-    if (request.method === "HEAD") {
-        response.setHeader("Content-Type", "text/html");
-        response.statusCode = 200;
-        // if request method is GET
-    } else if (request.method === "GET") {
+
+    if (request.method === "GET") {
         response.setHeader("Content-Type", "text/html");
         response.statusCode = 200;
         response.write(
-            "<!doctype html><html><title>Hello World!</title><p>Hello World!</p></html>"
+            `<!doctype html>
+<html>
+<title>Colors</title>
+<form method="POST">
+  <input type="text" name="text">
+  <select name="color">
+    <option value="red">red</option>
+    <option value="blue">blue</option>
+    <option value="green">green</option>
+    <option value="yellow">yellow</option>
+    <option value="gray">gray</option>
+    <option value="magenta">magenta</option>
+    <option value="cyan">cyan</option>
+  </select>
+  <button type="submit">Go</button>
+</form>
+</html>`
         );
         response.end();
         // if request method is POST
@@ -31,18 +39,24 @@ http.createServer((request, response) => {
         request.on("data", (chunk) => {
             body.push(chunk);
         });
-
         request.on("end", () => {
             body = Buffer.concat(body).toString();
-            console.log("this is the body: ", body);
+            //console.log("this is the body: ", body);
+            const parsedBody = querystring.parse(body);
+            //console.log("this is the parsed body", parsedBody);
+            // console log the text in color using chalk
+            console.log(chalk[parsedBody.color](parsedBody.text));
+
+            response.write(`<!doctype html><html>
+<title>${parsedBody.text}</title>
+<a href="/" style="color:${parsedBody.color}">${parsedBody.text}</a>
+</html>`);
+            response.end();
+
             response.on("error", (err) => {
                 console.log(err);
             });
         });
-        response.setHeader("Location", "/");
-        response.statusCode = 302;
-    } else {
-        response.statusCode = 405;
     }
 }).listen(8080, () => {
     console.log("server listening on port 8080");
