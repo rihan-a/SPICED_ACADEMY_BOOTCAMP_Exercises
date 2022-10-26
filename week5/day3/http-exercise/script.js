@@ -14,6 +14,7 @@ http.createServer((request, response) => {
     if (request.method === "HEAD") {
         response.setHeader("Content-Type", "text/html");
         response.statusCode = 200;
+        response.end();
         // if request method is GET
     } else if (request.method === "GET") {
         response.setHeader("Content-Type", "text/html");
@@ -27,7 +28,6 @@ http.createServer((request, response) => {
         request.on("data", (chunk) => {
             body.push(chunk);
         });
-
         request.on("end", () => {
             body = Buffer.concat(body).toString();
             console.log("this is the body: ", body);
@@ -35,10 +35,13 @@ http.createServer((request, response) => {
                 console.log(err);
             });
         });
-        response.setHeader("Location", "/");
         response.statusCode = 302;
+        response.setHeader("location", "/");
+        response.end();
     } else {
         response.statusCode = 405;
+        response.setHeader("location", "/");
+        response.end();
     }
 }).listen(8080, () => {
     console.log("server listening on port 8080");
