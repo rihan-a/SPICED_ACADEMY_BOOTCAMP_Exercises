@@ -1,0 +1,12 @@
+.project {
+    border: solid 1px black;
+    height: 150px;
+    width: 22%;
+}
+
+.projects-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
