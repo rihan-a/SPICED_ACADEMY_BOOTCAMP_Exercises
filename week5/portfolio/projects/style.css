@@ -1,12 +1,45 @@
-.project {
-    border: solid 1px black;
-    height: 150px;
-    width: 22%;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(36, 36, 36);
+    font-family: "Roboto", sans-serif;
+}
+
+h1 {
+    color: white;
+    margin: 30px auto;
+    text-align: center;
+    opacity: 0;
 }
 
 .projects-container {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+}
+.project {
+    border: solid 1px white;
+    width: 22%;
+    aspect-ratio: 1/1;
+    background-color: white;
+}
+.project a {
+    margin: auto;
+    width: 100%;
+    font-size: 3rem;
+    font-weight: 500;
+    color: rgb(36, 36, 36);
+    text-decoration: none;
+    text-align: justify;
+}
+
+.project a:hover {
+    color: darkgrey;
 }
