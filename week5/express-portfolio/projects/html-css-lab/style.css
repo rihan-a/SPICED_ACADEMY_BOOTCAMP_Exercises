@@ -1,0 +1,322 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* --- Overlay with side menu ----- */
+#overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.514);
+    display: none;
+    transition: 300ms ease-in-out;
+}
+
+/* ---- Header styling ---- */
+#header {
+    height: 100px;
+    position: relative;
+}
+
+.logo img {
+    height: 40px;
+}
+.logo {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+
+.hamburger-menu {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+
+.hamburger-menu button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: unset;
+    border-radius: none;
+    cursor: pointer;
+}
+
+.hamburger-menu button img {
+    height: 40px;
+}
+
+/* --- aside styling */
+
+#side-menu {
+    position: absolute;
+    background-color: white;
+    height: 100vh;
+    width: 30%;
+    z-index: 999;
+    right: 0;
+    transition: 300ms ease-in-out;
+}
+
+#side-menu > a {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+
+#side-menu img {
+    height: 40px;
+}
+
+#side-menu ul {
+    margin-top: 100px;
+    width: 100%;
+}
+
+#side-menu li {
+    list-style: none;
+    margin: 30px 60px;
+}
+
+#side-menu ul a {
+    text-decoration: none;
+    color: blue;
+    font-size: 30px;
+    transition: all 0.2s ease-in-out;
+}
+#side-menu ul li:nth-child(5) a {
+    font-size: 20px;
+}
+
+#side-menu a:hover {
+    text-decoration: underline;
+}
+
+.move-right {
+    transform: translateX(400%);
+}
+
+/*---- Modal stling  ---- */
+
+.modal {
+    position: absolute;
+    width: 35%;
+    height: 35%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 10px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal .txt-container {
+    margin: 20px;
+}
+.modal p:nth-child(1) {
+    margin: 15px 0px;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.modal p {
+    margin: 15px 0px;
+    font-size: 1.2rem;
+}
+
+.close-modal img {
+    width: 25px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+@media screen and (max-width: 786px) {
+    #header {
+        height: 90px;
+    }
+    .logo {
+        left: 20px;
+    }
+    .hamburger-menu {
+        right: 20px;
+    }
+
+    .logo img {
+        height: 35px;
+    }
+
+    #side-menu {
+        width: 50%;
+    }
+    #side-menu ul a {
+        font-size: 20px;
+    }
+    #side-menu > a {
+        right: 15px;
+    }
+    #side-menu img {
+        height: 30px;
+    }
+}
+
+/* --- Main styling --- */
+
+.img-container {
+    width: 100vw;
+    height: 88vh;
+    background: url(./assets/spices.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.title-container {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.title-container h2 {
+    color: white;
+    font-size: 3.7rem;
+    font-style: italic;
+    text-align: center;
+}
+
+.title-container button {
+    width: 25%;
+    height: 60px;
+    display: block;
+    margin: 30px auto;
+    border-radius: 50px;
+    font-size: 2.3rem;
+    color: rgb(195, 127, 0);
+    background-color: rgb(255, 208, 0);
+    border: solid 4px rgb(195, 127, 0);
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+    .title-container button {
+        height: 70px;
+        width: 35%;
+    }
+}
+
+@media screen and (max-width: 786px) {
+    .title-container button {
+        height: 50px;
+        width: 45%;
+        font-size: 1.5rem;
+    }
+
+    .title-container h2 {
+        width: 80%;
+        margin: auto;
+        color: white;
+        font-size: 2.2rem;
+    }
+}
+
+/* ----- Features section ----- */
+
+.features {
+    background-color: lightgrey;
+}
+
+.features-container {
+    padding: 80px 0;
+}
+
+.features .card {
+    width: 35vw;
+    height: 30%;
+    margin: 50px 7%;
+}
+
+.features-container .card:nth-child(1),
+.card:nth-child(3) {
+    float: left;
+}
+.features-container .card:nth-child(2),
+.card:nth-child(4) {
+    float: right;
+}
+
+.features .desc-container {
+    width: 84%;
+    float: right;
+}
+.features .desc-container h4 {
+    font-size: 1.7rem;
+}
+.features .desc-container p {
+    font-size: 1.4rem;
+}
+
+.features .card img {
+    width: 65px;
+}
+
+.clear-both {
+    clear: both;
+}
+
+@media screen and (max-width: 786px) {
+    .features .card {
+        width: 85vw;
+    }
+
+    .features .desc-container {
+        width: 75%;
+    }
+    .features .desc-container h4 {
+        font-size: 1.5rem;
+    }
+    .features .desc-container p {
+        font-size: 1.2rem;
+    }
+}
+
+/* --- footer styling */
+
+footer {
+    position: relative;
+}
+
+footer .footer-container {
+    background-color: rgb(103, 103, 103);
+    color: white;
+    padding: 15px;
+    padding-left: 50px;
+}
+
+/* --- Dark mode --- */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: rgb(41, 41, 41);
+    }
+
+    .title-container button {
+        background-color: rgb(41, 41, 41);
+    }
+
+    .features {
+        background-color: rgb(41, 41, 41);
+    }
+    .features .desc-container h4 {
+        color: white;
+    }
+    .features .desc-container p {
+        color: white;
+    }
+}

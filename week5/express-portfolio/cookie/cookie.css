@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(36, 36, 36);
+    font-family: "Roboto", sans-serif;
+}
+
+main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    /* border: solid 0.5px white; */
+    width: 60%;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+form img {
+    width: 60px;
+}
+
+form h3 {
+    font-size: 4rem;
+    color: rgb(66, 66, 66);
+}
+
+P {
+    color: rgb(66, 66, 66);
+    font-size: 1.5rem;
+    font-weight: 200;
+}
+.checkbox-container {
+    width: 30%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.btn-container {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+button {
+    display: block;
+    margin: auto;
+    background-color: none;
+    background: none;
+    border: solid 1px rgb(66, 66, 66);
+    color: rgb(66, 66, 66);
+    width: 30%;
+    height: 30px;
+    font-size: 1rem;
+}
+
+button:hover {
+    display: block;
+    margin: auto;
+    background-color: none;
+    background: rgb(127, 127, 127);
+
+    width: 30%;
+    height: 30px;
+    font-size: 1rem;
+}

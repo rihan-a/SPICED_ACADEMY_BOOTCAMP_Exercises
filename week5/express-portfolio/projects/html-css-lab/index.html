@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+
+        <title>HTML/CSS LAB</title>
+    </head>
+    <body>
+        <!-- Header Section -->
+
+        <header id="header">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="./assets/spiced.png" alt="logo"
+                /></a>
+            </div>
+            <div class="hamburger-menu">
+                <button id="hamburger-menu">
+                    <img src="./assets/hamburgermenu.svg" alt="menu" />
+                </button>
+            </div>
+
+            <aside id="side-menu" class="move-right">
+                <a href="javascript://" class="close-menu"
+                    ><img src="./assets/close_FILL1.svg" alt=""
+                /></a>
+
+                <ul>
+                    <li><a href="javascript://"> Settings</a></li>
+                    <li><a href="javascript://"> Pricing</a></li>
+                    <li><a href="javascript://"> Upgrade</a></li>
+                    <li><a href="javascript://"> Subscribe</a></li>
+                    <li><a href="javascript://"> Logout</a></li>
+                </ul>
+            </aside>
+        </header>
+
+        <!-- Main Section -->
+
+        <main>
+            <!-- Cover img section -->
+            <section class="img-container">
+                <div class="title-container">
+                    <h2>Welcome to SPICED and the Future.</h2>
+                    <button>Get Started</button>
+                </div>
+            </section>
+
+            <!-- Features section  -->
+
+            <section class="features">
+                <div class="features-container">
+                    <div class="card">
+                        <img src="./assets/cat.svg" alt="" />
+                        <div class="desc-container">
+                            <h4>Best-in-class Features</h4>
+                            <p>
+                                Nobody does this stuff better than us. You can
+                                bet your life on that.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <img src="./assets/world.svg" alt="" />
+                        <div class="desc-container">
+                            <h4>Reliable Service</h4>
+                            <p>
+                                You can count on us to help you whenever you
+                                need it. We're talking round the clock service.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="clear-both"></div>
+
+                    <div class="card">
+                        <img src="./assets/columns.svg" alt="" />
+                        <div class="desc-container">
+                            <h4>No Limits</h4>
+                            <p>
+                                There are absolutely no limits. We do not
+                                throttle. We do not cap.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <img src="./assets/swim.svg" alt="" />
+                        <div class="desc-container">
+                            <h4>An Acquired Taste</h4>
+                            <p>
+                                It may take a little while for you to warm up to
+                                us but once you do you will never want to
+                                switch.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="clear-both"></div>
+                </div>
+            </section>
+        </main>
+        <!-- footer section -->
+        <footer>
+            <div class="footer-container">
+                <p>© 2016 Some Organization</p>
+            </div>
+        </footer>
+
+        <!-- Overlay background for aside menu -->
+        <div id="overlay"></div>
+
+        <div class="modal">
+            <div class="txt-container">
+                <a href="javascript://" class="close-modal"
+                    ><img src="./assets/close_FILL1.svg" alt="close icon"
+                /></a>
+                <p>Welcome to our redesigned site!</p>
+                <p>Would like to take a tour of our new features?</p>
+                <p>
+                    By the way, this site uses cookies to track every little
+                    thing you do and if you're here we are going to assume you
+                    are ok with that.
+                </p>
+            </div>
+        </div>
+
+        <script
+            src="https://code.jquery.com/jquery-3.6.1.min.js"
+            integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+            crossorigin="anonymous"
+        ></script>
+        <script src="./script.js"></script>
+    </body>
+</html>
