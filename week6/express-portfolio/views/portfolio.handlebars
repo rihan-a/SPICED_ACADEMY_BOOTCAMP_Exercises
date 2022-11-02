@@ -1,0 +1,10 @@
+<img class="hero-img" src="./portfolio-s.svg" alt="portfolio-cover" />
+
+<div class="projects-container">
+    {{#projects}}
+        <div class="project">
+            <img src="{{img_directory}}" alt="{{title}}" />
+            <a href="{{directory}}">{{title}}</a>
+        </div>
+    {{/projects}}
+</div>
