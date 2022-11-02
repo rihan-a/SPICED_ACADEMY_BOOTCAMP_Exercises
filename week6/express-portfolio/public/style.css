@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(25, 25, 25);
+    font-family: "Roboto", sans-serif;
+}
+
+.hero-img {
+    display: inline-block;
+    margin: auto;
+    transform: scale(100%);
+    /* animation: hero 1s linear infinite; */
+    animation-play-state: paused;
+    animation-delay: calc(var(--scroll) * -1s);
+}
+
+@keyframes hero {
+    to {
+        transform: scale(7%);
+        /* margin-bottom: -200px; */
+    }
+}
+
+.projects-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 150px;
+}
+
+.project {
+    width: 22%;
+    aspect-ratio: 1/1;
+    background-color: rgb(63, 63, 63);
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.project a {
+    position: absolute;
+    top: 340px;
+    display: block;
+    margin: auto;
+    width: 100%;
+    font-size: 2rem;
+    font-weight: 400;
+    color: rgb(200, 200, 200);
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+}
+
+.project img {
+    width: 65%;
+    transition: all 0.3s ease-in-out;
+}
+
+.project img:hover {
+    width: 75%;
+}
+
+.project a:hover {
+    color: white;
+}
+
+footer {
+    display: block;
+}
+
+footer h5 {
+    padding: 10px 20px;
+    color: white;
+    font-weight: 200;
+    background-color: rgb(34, 34, 34);
+}
