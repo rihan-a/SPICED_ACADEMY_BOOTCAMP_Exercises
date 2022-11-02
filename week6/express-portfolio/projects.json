@@ -1,0 +1,22 @@
+[
+    {
+        "title": "Carousel",
+        "directory": "carousel",
+        "img_directory": "./carousel/carousel.svg"
+    },
+    {
+        "title": "Connect Four",
+        "directory": "connect-4",
+        "img_directory": "./connect-4/connect-4.svg"
+    },
+    {
+        "title": "Incremental Search",
+        "directory": "incremental-search",
+        "img_directory": "./incremental-search/incremental-search.svg"
+    },
+    {
+        "title": "Spotify Search",
+        "directory": "spotify-search",
+        "img_directory": "./spotify-search/spotify-search.svg"
+    }
+]
