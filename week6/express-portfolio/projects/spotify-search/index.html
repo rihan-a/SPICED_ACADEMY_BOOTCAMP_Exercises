@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./style.css" />
+        <title>Spotify Search</title>
+    </head>
+    <body>
+        <!-- Search Area  -->
+        <header>
+            <div class="logo-container">
+                <div class="lds-ripple">
+                    <div></div>
+                    <div></div>
+                </div>
+                <!-- <img src="./assets/Spotify_Logo_RGB_White.png" alt="" /> -->
+                <h2>Spotify Search</h2>
+            </div>
+
+            <div class="search-area">
+                <input
+                    type="text"
+                    id="search-input"
+                    autocapitalize="off"
+                    autocorrect="off"
+                    spellcheck="false"
+                    placeholder="What do you want to listen to?"
+                />
+                <select name="" id="search-select">
+                    <option value="artist">artist</option>
+                    <option value="album">album</option>
+                </select>
+                <button id="search-btn">
+                    <svg
+                        role="img"
+                        height="24"
+                        width="24"
+                        class="Svg-ytk21e-0 jAKAlG mOLTJ2mxkzHJj6Y9_na_"
+                        aria-hidden="true"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            d="M10.533 1.279c-5.18 0-9.407 4.14-9.407 9.279s4.226 9.279 9.407 9.279c2.234 0 4.29-.77 5.907-2.058l4.353 4.353a1 1 0 101.414-1.414l-4.344-4.344a9.157 9.157 0 002.077-5.816c0-5.14-4.226-9.28-9.407-9.28zm-7.407 9.279c0-4.006 3.302-7.28 7.407-7.28s7.407 3.274 7.407 7.28-3.302 7.279-7.407 7.279-7.407-3.273-7.407-7.28z"
+                        ></path>
+                    </svg>
+                </button>
+            </div>
+        </header>
+
+        <!-- Search results area -->
+
+        <main>
+            <div class="search-title-container">
+                <h3 class="search-title"></h3>
+            </div>
+
+            <!-- Loading spinner -->
+            <div class="lds-facebook">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+
+            <div class="results-container">
+                <!-- html tags will be injected from JS -->
+            </div>
+
+            <button class="load-more">load more</button>
+        </main>
+
+        <!-- jQuery CDN -->
+        <script
+            src="https://code.jquery.com/jquery-3.6.1.min.js"
+            integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+            crossorigin="anonymous"
+        ></script>
+        <script src="./script.js"></script>
+    </body>
+</html>
