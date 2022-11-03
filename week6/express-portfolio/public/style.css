@@ -11,6 +11,25 @@ body {
     font-family: "Roboto", sans-serif;
 }
 
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header ul li {
+    display: inline-block;
+    margin: 15px 40px;
+    list-style: none;
+}
+
+header ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+header img {
+    width: 40px;
+}
 .hero-img {
     display: inline-block;
     margin: auto;
@@ -83,4 +102,28 @@ footer h5 {
     color: white;
     font-weight: 200;
     background-color: rgb(34, 34, 34);
+}
+
+/* -----  project page ------ */
+
+.page-container {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.project-desc {
+    width: 45%;
+    aspect-ratio: 1/1;
+    background-color: bisque;
+    /* height: 100%; */
+}
+
+.project-img {
+    width: 45%;
+    aspect-ratio: 1/1;
+    background-color: bisque;
+    /* height: 100%; */
 }

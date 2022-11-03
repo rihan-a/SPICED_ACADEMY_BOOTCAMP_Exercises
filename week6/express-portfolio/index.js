@@ -4,6 +4,7 @@ const express = require("express");
 const handlebars = require("express-handlebars");
 const cookieParser = require("cookie-parser");
 const projectsJSON = require("./projects.json");
+const { networkInterfaces } = require("os");
 const app = express();
 const PORT = 3000;
 
@@ -14,6 +15,17 @@ app.set("view engine", "handlebars");
 app.use(cookieParser());
 // install middleware to help us read POST body (form data) easily
 app.use(express.urlencoded({ extended: false }));
+
+app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "projects")));
+
+app.get("/", (req, res) => {
+    res.render("portfolio", { projects: projectsJSON });
+});
+
+// app.get("/carousel", (req, res) => {
+//     res.render("project", { projects: projectsJSON });
+// });
 
 // app.get("/", (req, res) => {
 //     // only send the file if the user has NOT accepted the cookies
@@ -34,13 +46,7 @@ app.use(express.urlencoded({ extended: false }));
 //     }
 // });
 
-app.get("/", (req, res) => {
-    res.render("portfolio", { projects: projectsJSON });
-});
-
 //app.use(express.static(path.join(__dirname, "cookie")));
-app.use(express.static(path.join(__dirname, "public")));
-app.use(express.static(path.join(__dirname, "projects")));
 
 // app.post("/", (req, res) => {
 //     // read data sent by the user in the form!
@@ -57,6 +63,18 @@ app.use(express.static(path.join(__dirname, "projects")));
 //         res.send("Sorry, you have to accept cookies to access the website");
 //     }
 // });
+
+app.get("/projects/:project", (req, res) => {
+    for (let i = 0; i < projectsJSON.length; i++) {
+        if (projectsJSON[i].directory === req.params.project) {
+            console.log("Project directory", projectsJSON[i].directory);
+            res.render("project", { project: projectsJSON[i] });
+        }
+        // } else {
+        //     res.sendStatus(404); // not found
+        // }
+    }
+});
 
 // listen on port 3000
 app.listen(PORT, () => {

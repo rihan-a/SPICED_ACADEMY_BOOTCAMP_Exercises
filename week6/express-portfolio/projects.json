@@ -2,21 +2,25 @@
     {
         "title": "Carousel",
         "directory": "carousel",
+        "desc": " Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus totam provident tempora repellendus perspiciatis velit magnam sit perferendis eos fuga, mollitia quo eius aut pariatur, repellat libero, alias et officia",
         "img_directory": "./carousel/carousel.svg"
     },
     {
         "title": "Connect Four",
         "directory": "connect-4",
+        "desc": " Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus totam provident tempora repellendus perspiciatis velit magnam sit perferendis eos fuga, mollitia quo eius aut pariatur, repellat libero, alias et officia",
         "img_directory": "./connect-4/connect-4.svg"
     },
     {
         "title": "Incremental Search",
         "directory": "incremental-search",
+        "desc": " Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus totam provident tempora repellendus perspiciatis velit magnam sit perferendis eos fuga, mollitia quo eius aut pariatur, repellat libero, alias et officia",
         "img_directory": "./incremental-search/incremental-search.svg"
     },
     {
         "title": "Spotify Search",
         "directory": "spotify-search",
+        "desc": " Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus totam provident tempora repellendus perspiciatis velit magnam sit perferendis eos fuga, mollitia quo eius aut pariatur, repellat libero, alias et officia",
         "img_directory": "./spotify-search/spotify-search.svg"
     }
 ]
