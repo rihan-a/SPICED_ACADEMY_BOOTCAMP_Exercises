@@ -7,25 +7,20 @@
 
     // fetch news from Json file
     function getNews() {
-        $.ajax({
-            url: "/news.json",
-            method: "GET", // its get by default
-            success: function (data) {
+        fetch("headlines.json")
+            .then((response) => response.json())
+            .then((data) => {
                 printNews(data);
                 ticker();
-            },
-            error: function (error) {
-                console.log(error);
-            },
-        });
+            })
+            .catch((err) => console.log(err));
     }
     // inject html tags
     function printNews(data) {
         data.forEach((element) => {
             document.querySelector("#headlines").innerHTML += `
- <a class="headline-link"
-                    href="${element.href}"
-                    >${element.text}</a
+ <a class="headline-link" target="_blank" href="${element.url}" 
+                    >${element.tweet}</a
                 >`;
         });
     }
