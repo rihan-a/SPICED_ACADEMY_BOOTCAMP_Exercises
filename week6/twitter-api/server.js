@@ -9,7 +9,9 @@ const { getToken, getTweets, filterTweets } = require("./twitter");
 
 const { PORT } = process.env;
 
-app.get("/", (req, res) => {
+app.use(express.static(path.join(__dirname, "ticker")));
+
+app.get("/headlines.json", (req, res) => {
     // 1. get a token
     // 2. get tweets
     // 3. filter & format the tweets
@@ -34,7 +36,6 @@ app.get("/", (req, res) => {
         });
     });
 });
-app.use(express.static(path.join(__dirname, "ticker")));
 
 app.listen(PORT, () => {
     console.log(`I'm listening on port ${PORT}`);

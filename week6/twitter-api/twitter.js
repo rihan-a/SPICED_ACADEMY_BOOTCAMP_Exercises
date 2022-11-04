@@ -1,5 +1,4 @@
 const https = require("https");
-
 const { TWITTER_API_KEY, TWITTER_API_SECRET } = process.env;
 
 module.exports.getToken = (callback) => {
@@ -41,9 +40,10 @@ module.exports.getToken = (callback) => {
 
 module.exports.getTweets = (token, callback) => {
     console.log({ token });
+
     const config = {
         host: "api.twitter.com",
-        path: "/1.1/statuses/user_timeline.json?screen_name=nytimes",
+        path: "/1.1/statuses/user_timeline.json?screen_name=nasa",
         method: "GET",
         headers: {
             Authorization: `Bearer ${token}`,
@@ -79,7 +79,6 @@ module.exports.filterTweets = (tweets) => {
 
     tweets.forEach((tweet) => {
         let tweetText = tweet.text.split("https");
-
         if (tweet.entities.urls[0]) {
             tweetsJSON = [
                 ...tweetsJSON,
