@@ -15,7 +15,7 @@
 #ticker {
     position: relative;
     overflow-x: hidden;
-    height: 1100px;
+    height: 110px;
 }
 
 #headlines a {
@@ -31,5 +31,23 @@
 
 #headlines a:hover {
     text-decoration: underline;
-    color: blue;
+}
+
+.search-input {
+    margin: auto;
+    height: 100px;
+}
+
+.search-input input:nth-child(1) {
+    width: 20%;
+    height: 70px;
+    border: solid 1px black;
+}
+
+.search-input input:nth-child(2) {
+    width: 10%;
+    height: 70px;
+    background-color: none;
+
+    border: solid 1px black;
 }

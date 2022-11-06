@@ -5,7 +5,7 @@
         getNews();
     };
 
-    // fetch news from Json file
+    // fetch news from server
     function getNews() {
         fetch("headlines.json")
             .then((response) => response.json())
