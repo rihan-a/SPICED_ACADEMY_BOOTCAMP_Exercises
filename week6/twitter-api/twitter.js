@@ -78,27 +78,31 @@ module.exports.getTweets = (token, screenName) => {
 
 // filter the raw data to get tweet text and url
 module.exports.filterTweets = (tweets) => {
-    const newsSources = ["nytimes", "theonion", "bbc"];
     //console.log(tweets);
+    //console.log(tweets.length);
     let tweetsJSON = [];
 
-    console.log(tweets.length);
+    // flat tweets array and sort them in reverse chronological order
+    let sortedTweets = tweets
+        .flat()
+        .sort((a, b) => b.created_at - a.created_at);
 
-    tweets.forEach((source, i) => {
-        source.forEach((tweet) => {
-            let tweetText = tweet.text.split("https");
-            if (tweet.entities.urls[0]) {
-                tweetsJSON = [
-                    ...tweetsJSON,
-                    {
-                        source: newsSources[i],
-                        tweet: tweetText[0],
-                        url: tweet.entities.urls[0].url,
-                    },
-                ];
-            }
-            return;
-        });
+    //console.log(sortedTweets);
+
+    sortedTweets.forEach((tweet) => {
+        //console.log(tweet.user.name);
+        let tweetText = tweet.text.split("https");
+        if (tweet.entities.urls[0]) {
+            tweetsJSON = [
+                ...tweetsJSON,
+                {
+                    source: tweet.user.name,
+                    tweet: tweetText[0],
+                    url: tweet.entities.urls[0].url,
+                },
+            ];
+        }
+        return;
     });
 
     return tweetsJSON;
