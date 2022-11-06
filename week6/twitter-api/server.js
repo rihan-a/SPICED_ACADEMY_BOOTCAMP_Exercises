@@ -7,6 +7,8 @@ const app = express();
 const { getToken, getTweets, filterTweets } = require("./twitter");
 const { PORT } = process.env;
 
+const newsSources = ["nytimes", "theonion", "bbc"];
+
 // serve ticker prokject folder
 app.use(express.static(path.join(__dirname, "ticker")));
 
@@ -17,19 +19,18 @@ app.get("/headlines.json", (req, res) => {
     // 4. respond with JSON
     getToken()
         .then((accessToken) => {
-            return getTweets(accessToken);
-        })
-
-        .then((tweets) => {
-            const filteredTweets = filterTweets(tweets);
-            res.json(filteredTweets);
+            Promise.all([
+                getTweets(accessToken, newsSources[0]),
+                getTweets(accessToken, newsSources[1]),
+                getTweets(accessToken, newsSources[2]),
+            ]).then((tweets) => {
+                const filteredTweets = filterTweets(tweets);
+                res.json(filteredTweets);
+            });
         })
         .catch((error) => {
-            if (error) {
-                res.sendStatus(500);
-                console.log("ERROR: ", error);
-                return;
-            }
+            res.sendStatus(500);
+            console.log(error);
         });
 });
 

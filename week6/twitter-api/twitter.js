@@ -1,4 +1,3 @@
-const { log } = require("console");
 const https = require("https");
 const { TWITTER_API_KEY, TWITTER_API_SECRET } = process.env;
 
@@ -44,7 +43,7 @@ module.exports.getToken = () => {
 
 module.exports.getTweets = (token, screenName) => {
     return new Promise((resolve, reject) => {
-        console.log({ token });
+        //console.log({ token });
         const config = {
             host: "api.twitter.com",
             path: `/1.1/statuses/user_timeline.json?screen_name=${screenName}`,
@@ -79,19 +78,28 @@ module.exports.getTweets = (token, screenName) => {
 
 // filter the raw data to get tweet text and url
 module.exports.filterTweets = (tweets) => {
+    const newsSources = ["nytimes", "theonion", "bbc"];
     //console.log(tweets);
     let tweetsJSON = [];
+
     console.log(tweets.length);
 
-    tweets.forEach((tweet) => {
-        let tweetText = tweet.text.split("https");
-        if (tweet.entities.urls[0]) {
-            tweetsJSON = [
-                ...tweetsJSON,
-                { tweet: tweetText[0], url: tweet.entities.urls[0].url },
-            ];
-        }
-        return;
+    tweets.forEach((source, i) => {
+        source.forEach((tweet) => {
+            let tweetText = tweet.text.split("https");
+            if (tweet.entities.urls[0]) {
+                tweetsJSON = [
+                    ...tweetsJSON,
+                    {
+                        source: newsSources[i],
+                        tweet: tweetText[0],
+                        url: tweet.entities.urls[0].url,
+                    },
+                ];
+            }
+            return;
+        });
     });
+
     return tweetsJSON;
 };
