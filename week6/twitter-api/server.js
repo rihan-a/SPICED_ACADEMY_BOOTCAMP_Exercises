@@ -1,14 +1,13 @@
 // adds all the variables in .env to process.env!
 require("dotenv").config();
+// import node modules
 const path = require("path");
 const express = require("express");
-
 const app = express();
-
 const { getToken, getTweets, filterTweets } = require("./twitter");
-
 const { PORT } = process.env;
 
+// serve ticker prokject folder
 app.use(express.static(path.join(__dirname, "ticker")));
 
 app.get("/headlines.json", (req, res) => {
@@ -16,25 +15,22 @@ app.get("/headlines.json", (req, res) => {
     // 2. get tweets
     // 3. filter & format the tweets
     // 4. respond with JSON
+    getToken()
+        .then((accessToken) => {
+            return getTweets(accessToken);
+        })
 
-    getToken((error, token) => {
-        // check for errors...
-        // send back empty JSON if there is an error!
-        if (error) {
-            console.log(error);
-            return;
-        }
-        getTweets(token, (error, tweets) => {
-            //console.log("Got some tweets:", tweets);
+        .then((tweets) => {
+            const filteredTweets = filterTweets(tweets);
+            res.json(filteredTweets);
+        })
+        .catch((error) => {
             if (error) {
-                console.log(error);
+                res.sendStatus(500);
+                console.log("ERROR: ", error);
                 return;
             }
-            const filteredTweets = filterTweets(tweets);
-
-            res.json(filteredTweets);
         });
-    });
 });
 
 app.listen(PORT, () => {
