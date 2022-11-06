@@ -20,7 +20,7 @@
         data.forEach((element) => {
             document.querySelector("#headlines").innerHTML += `
  <a class="headline-link" target="_blank" href="${element.url}" 
-                    >${element.tweet}</a
+                    > <img src="./Twitter-logo.svg" alt="Twitter-logo"> (${element.source}) - ${element.tweet}</a
                 >`;
         });
     }
@@ -44,7 +44,7 @@
                 linkOffsetLeft = headlineContainer.firstElementChild.offsetLeft;
             }
 
-            linkOffsetLeft = linkOffsetLeft - 2;
+            linkOffsetLeft = linkOffsetLeft - 1;
             headlineContainer.style.left = `${linkOffsetLeft}px`;
 
             requestID = requestAnimationFrame(move);

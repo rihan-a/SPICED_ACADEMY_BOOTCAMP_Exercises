@@ -3,19 +3,17 @@
     padding: 0px;
     box-sizing: border-box;
 }
-
+#ticker {
+    position: relative;
+    overflow-x: hidden;
+    height: 110px;
+}
 #headlines {
     white-space: nowrap;
     position: absolute;
     border-bottom: 1px solid black;
     padding: 10px 0;
-    left: -50%;
-}
-
-#ticker {
-    position: relative;
-    overflow-x: hidden;
-    height: 110px;
+    left: -100%;
 }
 
 #headlines a {
@@ -29,25 +27,10 @@
     padding-right: 20px;
 }
 
+#headlines a img {
+    width: 25px;
+}
+
 #headlines a:hover {
     text-decoration: underline;
-}
-
-.search-input {
-    margin: auto;
-    height: 100px;
-}
-
-.search-input input:nth-child(1) {
-    width: 20%;
-    height: 70px;
-    border: solid 1px black;
-}
-
-.search-input input:nth-child(2) {
-    width: 10%;
-    height: 70px;
-    background-color: none;
-
-    border: solid 1px black;
 }
