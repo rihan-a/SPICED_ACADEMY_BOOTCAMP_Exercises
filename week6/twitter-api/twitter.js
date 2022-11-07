@@ -85,9 +85,7 @@ module.exports.filterTweets = (tweets) => {
     // flat tweets array and sort them in reverse chronological order
     let sortedTweets = tweets
         .flat()
-        .sort((a, b) => b.created_at - a.created_at);
-
-    //console.log(sortedTweets);
+        .sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
 
     sortedTweets.forEach((tweet) => {
         //console.log(tweet.user.name);
